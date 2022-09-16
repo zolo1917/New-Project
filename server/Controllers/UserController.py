@@ -1,6 +1,9 @@
 from Models.UserModel import UserModel
 from fastapi import APIRouter
 from logger_tt import logger
+from logger_tt import setup_logging
+
+setup_logging(full_context=1)
 
 router = APIRouter(prefix="/user")
 
