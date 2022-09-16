@@ -1,9 +1,9 @@
 from Models.UserModel import UserModel
 from fastapi import APIRouter
-from logger_tt import logger
-from logger_tt import setup_logging
+from logging import getLogger
 
-setup_logging(full_context=1)
+logger = getLogger(__name__)
+
 
 router = APIRouter(prefix="/user")
 
@@ -14,7 +14,7 @@ users = [{"id": 1, "username": "test1", "password": "test1123"},
 
 
 @router.get("/getAllUsers")
-def get_users():
+async def get_users():
     logger.info("getting all users")
     return users
 
@@ -33,11 +33,13 @@ async def create_user(user: UserModel):
     return "User was created successfully"
 
 
-@router.put("/updateuser")
-async def update_user():
-    pass
+@router.put("/updateuser/{id}")
+async def update_user(id, user: UserModel):
+    logger.debug(f"update the user for id = {id}, user = {user}")
+    return f"update the user for id = {id}, user = {user}"
 
 
-@router.delete("/deleteuser")
-async def delete_user():
-    pass
+@router.delete("/deleteuser/{id}")
+async def delete_user(id):
+    logger.info(f"User with id = {id} has been deleted")
+    return f"User with id = {id} has been deleted"

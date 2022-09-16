@@ -4,12 +4,11 @@
 
 
 # Each applciation
-
 from fastapi import FastAPI
 from Controllers import UserController
-from logger_tt import setup_logging
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
-setup_logging(full_context=1)
 app = FastAPI()
 
 app.include_router(UserController.router)
