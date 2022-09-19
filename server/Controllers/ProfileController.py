@@ -1,8 +1,9 @@
+import sys
 from Models.ProfileModel import ProfileModel
 from fastapi import APIRouter
-import logging
+from logging import getLogger
+logger = getLogger(__name__)
 
-logging.basicConfig(level=logging)
 
 router = APIRouter(prefix="/Profile")
 
@@ -16,29 +17,34 @@ users = [{"user_id": 1, "first_name": "test1", "last_name": "test1123", "contact
 
 @router.get("/getAllUsers")
 def get_users():
-    logging.info("getting all users")
+    logger.info("getting all users")
     return users
 
 
 @router.get("/getuserbyid/{id}")
 async def get_user_by_id(id):
-    logging.info(f"fetching user for for {id}")
+    if(int(id) > len(users)):
+        logger.info("no id found")
+        return -1
+    logger.info(f"fetching user for for {id}")
     return users[int(id)-1]
 
 
 @router.post("/createuser")
 async def create_user(user: ProfileModel):
-    logging.info("Creating new user")
+    logger.info("Creating new user")
     print(user)
-    logging.debug(f"user is {user}")
+    logger.debug(f"user is {user}")
     return "User was created successfully"
 
 
 @router.put("/updateuser")
-async def update_user():
-    pass
+async def update_user(id, user: ProfileModel):
+    logger.debug(f"update the user for id = {id}, user = {user}")
+    return f"update the user for id = {id}, user = {user}"
 
 
 @router.delete("/deleteuser")
-async def delete_user():
-    pass
+async def delete_user(id):
+    logger.info(f"User with id = {id} has been deleted")
+    return f"User with id = {id} has been deleted"

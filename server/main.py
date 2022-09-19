@@ -9,8 +9,9 @@ from fastapi import FastAPI
 from Controllers import UserController
 from Controllers import ProfileController
 import logging
+logging.basicConfig(level=logging.DEBUG)
 
-logging.basicConfig(level=logging)
+
 app = FastAPI()
 app.include_router(UserController.router)
 app.include_router(ProfileController.router)
