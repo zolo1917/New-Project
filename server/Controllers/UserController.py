@@ -37,7 +37,7 @@ async def get_user_by_id(user_id:int=Path(description="Enter the ID of User you 
     return users[user_id]
 
 @router.post("/CreateUSer/{user_id}")
-async def create_user(user_id: int, user: UserModel):
+async def create_new_user(user_id: int, user: UserModel):
     logger.info("Creating new user")
     if user_id in users:
         return {"ERROR":"USER EXIXTS"}
