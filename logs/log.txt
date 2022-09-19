@@ -1,0 +1,28 @@
+[2022-09-16 21:52:18] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:52:18] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:52:18] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 21:52:18] [logger_tt:157 WARNING] Re-initializing logger_tt. "setup_logging()" should only be called one.
+[2022-09-16 21:52:18] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:52:18] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:52:18] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 21:57:05] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:57:05] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:57:05] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 21:57:05] [logger_tt:157 WARNING] Re-initializing logger_tt. "setup_logging()" should only be called one.
+[2022-09-16 21:57:05] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:57:05] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:57:05] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 21:59:17] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:59:17] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:59:17] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 21:59:17] [logger_tt:157 WARNING] Re-initializing logger_tt. "setup_logging()" should only be called one.
+[2022-09-16 21:59:17] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 21:59:17] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 21:59:17] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 22:01:37] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 22:01:37] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 22:01:37] [root:131 DEBUG] Logging queue listener started!
+[2022-09-16 22:01:37] [logger_tt:157 WARNING] Re-initializing logger_tt. "setup_logging()" should only be called one.
+[2022-09-16 22:01:37] [root:185 DEBUG] _________________New log started__________________
+[2022-09-16 22:01:37] [root:186 DEBUG] Log config file: C:\Users\Naman\AppData\Local\Programs\Python\Python310\lib\site-packages\logger_tt\log_config.json
+[2022-09-16 22:01:37] [root:131 DEBUG] Logging queue listener started!

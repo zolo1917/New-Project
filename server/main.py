@@ -7,12 +7,13 @@
 
 from fastapi import FastAPI
 from Controllers import UserController
-from logger_tt import setup_logging
+from Controllers import ProfileController
+import logging
 
-setup_logging(full_context=1)
+logging.basicConfig(level=logging)
 app = FastAPI()
-
 app.include_router(UserController.router)
+app.include_router(ProfileController.router)
 
 
 @app.get("/")

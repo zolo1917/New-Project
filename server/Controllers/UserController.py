@@ -1,9 +1,8 @@
 from Models.UserModel import UserModel
 from fastapi import APIRouter
-from logger_tt import logger
-from logger_tt import setup_logging
+import logging
 
-setup_logging(full_context=1)
+logging.basicConfig(level=logging)
 
 router = APIRouter(prefix="/user")
 
@@ -15,21 +14,21 @@ users = [{"id": 1, "username": "test1", "password": "test1123"},
 
 @router.get("/getAllUsers")
 def get_users():
-    logger.info("getting all users")
+    logging.info("getting all users")
     return users
 
 
 @router.get("/getuserbyid/{id}")
 async def get_user_by_id(id):
-    logger.info(f"fetching user for for {id}")
+    logging.info(f"fetching user for for {id}")
     return users[int(id)-1]
 
 
 @router.post("/createuser")
 async def create_user(user: UserModel):
-    logger.info("Creating new user")
+    logging.info("Creating new user")
     print(user)
-    logger.debug(f"user is {user}")
+    logging.debug(f"user is {user}")
     return "User was created successfully"
 
 
