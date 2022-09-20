@@ -10,7 +10,8 @@ router = APIRouter(prefix="/user")
 users = [{"id": 1, "username": "test1", "password": "test1123"},
          {"id": 2, "username": "test2", "password": "test1123"},
          {"id": 3, "username": "test3", "password": "test1123"},
-         {"id": 4, "username": "test4", "password": "test1123"}]
+         {"id": 4, "username": "test4", "password": "test1123"},
+         {"id": 5,  "sagar":"test5", "password": "test1234"}]
 
 
 @router.get("/getAllUsers")

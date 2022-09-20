@@ -6,3 +6,5 @@ class UserModel(BaseModel):
     id: Optional[int]
     username: str
     password: str
+
+
