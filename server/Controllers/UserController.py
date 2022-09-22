@@ -1,7 +1,7 @@
 from fastapi import APIRouter,Path
 from logging import getLogger
 from Model.UserModel import UserModel
-from Model.UpdateModel import UpdateModel
+
 
 logger = getLogger(__name__)
 
@@ -36,24 +36,47 @@ async def get_user_by_id(user_id:int=Path(description="Enter the ID of User you 
     logger.info(f"fetching user for for {user_id}")
     return users[user_id]
 
-@router.post("/CreateUSer/{user_id}")
-async def create_user(user_id: int, user: UserModel):
+@router.post("/CreateUser")
+async def create_user( user: UserModel):
     logger.info("Creating new user")
-    if user_id in users:
-        return {"ERROR":"USER EXIXTS"}
+    if user.username == None:
+        return {"Enter a valid Username"}
     
+    if user.username.isspace() == True:
+        return {"ENTER A VALID USERNAME"}
+    
+    if user.username =="":
+        return {"ENTER A VALID USERNAME"}
+    
+    if user.password.isspace() == True:
+        return {"Password cannot cantain white spaces"}
+    
+    if user.password =="":
+        return {"ENTER A VALID PASSWORD"}
     logger.debug(f"user is {user}")
-    users[user_id]=user
-    return users[user_id] 
+    return user
+
 
 @router.put("/Update_user/{user_id}")
-async def update_user(user:UpdateModel,user_id: int=Path(description="enter th eId of User You want to update",gt=0)):
+async def update_user(user:UserModel,user_id: int=Path(description="enter th eId of User You want to update",gt=0)):
     if user_id not in users:
         return {"ERROR":"User does not exists"}
 
     if user.username != None:
         users[user_id]['username']= user.username
-
+    
+    if user.username.isspace() == True:
+        return {"ENTER A VALID USERNAME"}
+    
+    if user.username =="":
+        return {"ENTER A VALID USERNAME"}
+    
+    if user.password.isspace() == True:
+        return {"Password cannot cantain white spaces"}
+    
+    if user.password =="":
+        return {"ENTER A VALID PASSWORD"}
+    
     if user.password != None:
         users[user_id]['password']=user.password
     
@@ -68,7 +91,3 @@ def delete_user(user_id: int=Path(description="enter th Id of User You want to d
     del users[user_id]
     logger.info(f"User with id = {user_id} has been deleted")
     return f"User with id = {user_id} has been deleted"
-
-    
-
-
