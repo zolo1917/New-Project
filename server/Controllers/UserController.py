@@ -36,8 +36,8 @@ async def get_user_by_id(user_id:int=Path(description="Enter the ID of User you 
     logger.info(f"fetching user for for {user_id}")
     return users[user_id]
 
-@router.post("/CreateUser")
-async def create_user( user: UserModel):
+@router.post("/CreateUser/")
+async def create_new_user(user_id: int, user: UserModel):
     logger.info("Creating new user")
     if user.username == None:
         return {"Enter a valid Username"}
