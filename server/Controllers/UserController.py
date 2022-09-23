@@ -28,7 +28,6 @@ async def get_user_by_id(id):
 @router.post("/createuser")
 async def create_user(user: UserModel):
     logger.info("Creating new user")
-    print(user)
     logger.debug(f"user is {user}")
     return "User was created successfully"
 
