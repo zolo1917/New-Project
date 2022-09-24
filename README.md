@@ -27,5 +27,5 @@
 
 # Dependencies:
 
-    1. Database
-    2. Database connector - ORM
+    1. Database - mysql
+    2. Database connector - ORM (Object Relational mapping) - This will my class models with the database
