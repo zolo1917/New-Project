@@ -5,7 +5,7 @@
 
 # Each applciation
 from fastapi import FastAPI
-from Controllers import UserController
+from Controllers import UserController,CommentsController
 import logging
 from dotenv import load_dotenv
 logging.basicConfig(level=logging.DEBUG)
@@ -15,6 +15,7 @@ load_dotenv()
 app = FastAPI()
 
 app.include_router(UserController.router)
+app.include_router(CommentsController.router)
 
 
 @app.get("/")
