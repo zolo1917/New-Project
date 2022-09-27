@@ -1,4 +1,3 @@
-
 from os import environ as env
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
@@ -21,10 +20,10 @@ SessionLocal = sessionmaker(autoflush=False, autocommit=True, bind=engine)
 
 Base = declarative_base()
 
-
 def get_db():
     try:
         db = SessionLocal()
+        db.begin()
         yield db
     finally:
         db.close()

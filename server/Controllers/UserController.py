@@ -1,6 +1,9 @@
-from fastapi import APIRouter, Path
+from EntityObjects.Users import Users
+from database import get_db
+from fastapi import APIRouter, Path, Depends
 from logging import getLogger
 from Models.UserModel import UserModel
+from sqlalchemy.orm import Session
 
 
 logger = getLogger(__name__)
@@ -39,7 +42,7 @@ async def get_user_by_id(user_id: int = Path(description="Enter the ID of User y
 
 
 @router.post("/CreateUser")
-async def create_user(user: UserModel):
+async def create_user(user: UserModel, db: Session = Depends(get_db)):
     logger.info("Creating new user")
     if user.username == None:
         return {"Enter a valid Username"}
@@ -56,6 +59,13 @@ async def create_user(user: UserModel):
     if user.password == "":
         return {"ENTER A VALID PASSWORD"}
     logger.debug(f"user is {user}")
+    
+    # create user entity object from UserModel
+    userEntity = Users()
+    userEntity.username = user.username
+    userEntity.hashed_password = user.password
+    db.add(userEntity)
+    db.commit()
     user_id = len(users)+1
     users[user_id] = user
     return users[user_id]
