@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Path
 from logging import getLogger
-from Model.UserModel import UserModel
+from Models.UserModel import UserModel
 
 
 logger = getLogger(__name__)

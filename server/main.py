@@ -7,13 +7,10 @@
 from fastapi import FastAPI
 from Controllers import UserController
 import logging
-from database import getDBString
 from dotenv import load_dotenv
 logging.basicConfig(level=logging.DEBUG)
 
 load_dotenv()
-
-getDBString()
 
 app = FastAPI()
 

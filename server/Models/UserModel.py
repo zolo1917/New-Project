@@ -1,4 +1,6 @@
 
+from copyreg import constructor
+from typing_extensions import Self
 from pydantic import BaseModel
 from typing import Optional
 
